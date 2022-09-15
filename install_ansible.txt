@@ -1,0 +1,18 @@
+alias cyg-get="/cygdrive/c/Users/admin/Downloads/setup-x86_64.exe -q -P"
+
+cyg-get cygwin32-gcc-g++,gcc-core,gcc-g++,git,libffi-devel,nano,openssl,openssl-devel,python-crypto,python3,python3-devel,python3-openssl,python3-pip,python3-setuptools,python3-devel,tree,wget,zip,make
+
+pip3 install --upgrade pip
+
+python3 -m pip install cryptography==3.4.6
+
+pip install ansible
+
+
+vim ~/.ansible.cfg
+[ssh_connection]
+ssh_args = -o ControlMaster=no
+
+
+
+export ANSIBLE_SSH_ARGS='-o ControlMaster=no'
